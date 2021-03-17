@@ -20,11 +20,26 @@ class ComposerStaticInita4be30405c69d2723d53acb8678cfeee
         ),
     );
 
+    public static $classMap = array (
+        'Inc\\Api\\Callbacks\\AdminCallbacks' => __DIR__ . '/../..' . '/inc/Api/Callbacks/AdminCallbacks.php',
+        'Inc\\Api\\DaneCodes' => __DIR__ . '/../..' . '/inc/Api/DaneCodes.php',
+        'Inc\\Api\\RestClientApi' => __DIR__ . '/../..' . '/inc/Api/RestClientApi.php',
+        'Inc\\Api\\SettingsApi' => __DIR__ . '/../..' . '/inc/Api/SettingsApi.php',
+        'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/inc/Base/Activate.php',
+        'Inc\\Base\\BaseController' => __DIR__ . '/../..' . '/inc/Base/BaseController.php',
+        'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/inc/Base/Deactivate.php',
+        'Inc\\Base\\Enqueue' => __DIR__ . '/../..' . '/inc/Base/Enqueue.php',
+        'Inc\\Base\\SettingsLinks' => __DIR__ . '/../..' . '/inc/Base/SettingsLinks.php',
+        'Inc\\Init' => __DIR__ . '/../..' . '/inc/Init.php',
+        'Inc\\Pages\\Admin' => __DIR__ . '/../..' . '/inc/Pages/Admin.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInita4be30405c69d2723d53acb8678cfeee::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInita4be30405c69d2723d53acb8678cfeee::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita4be30405c69d2723d53acb8678cfeee::$classMap;
 
         }, null, ClassLoader::class);
     }
