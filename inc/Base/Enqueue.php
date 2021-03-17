@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoApi
  */
 namespace Inc\Base;
 
@@ -15,6 +15,6 @@ class Enqueue extends BaseController
 
 	function enqueue(){
 		// enqueue all the scripts
-		wp_enqueue_style( 'adminEnvioclickStyles', $this->plugin_url . 'assets/admin.css' );
+		wp_enqueue_style( 'adminWoocommerceSiigoApiStyles', $this->plugin_url . 'assets/admin.css' );
 	}
 }

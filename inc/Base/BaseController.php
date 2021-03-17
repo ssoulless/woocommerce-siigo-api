@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoApi
  */
 namespace Inc\Base;
 
@@ -26,7 +26,7 @@ class BaseController
 	{
 		$this->plugin_path = plugin_dir_path( dirname( __FILE__, 2) );
 		$this->plugin_url = plugin_dir_url( dirname(__FILE__, 2 ) );
-		$this->plugin = plugin_basename( dirname(__FILE__, 3 ) ) . '/woocommerce-envioclick.php';
+		$this->plugin = plugin_basename( dirname(__FILE__, 3 ) ) . '/woocommerce-siigo-api.php';
 		$this->api_endpoint = 'https://api.envioclickpro.com.co/api/v1';
 
 		//This is the status that will trigger the API call to envioclick

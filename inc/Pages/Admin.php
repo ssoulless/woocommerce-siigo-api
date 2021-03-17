@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoAPI
  */
 namespace Inc\Pages;
 
@@ -41,10 +41,10 @@ class Admin extends BaseController
 	{
 		$this->pages = array(
 			array(
-				'page_title' => 'EnvioClick', 
-				'menu_title' => 'EnvioClick', 
+				'page_title' => 'Siigo API', 
+				'menu_title' => 'Siigo API', 
 				'capability' => 'manage_options', 
-				'menu_slug' => 'envioclick_plugin', 
+				'menu_slug' => 'woocommerce_siigo_api_plugin', 
 				'callback' => array( $this->callbacks, 'admin_general_settings' ), 
 				'icon_url' => 'dashicons-admin-generic', 
 				'position' => 9
@@ -56,11 +56,11 @@ class Admin extends BaseController
 	{
 		$this->subpages = array(
 			array(
-				'parent_slug' => 'envioclick_plugin',
+				'parent_slug' => 'woocommerce_siigo_api_plugin',
 				'page_title' => 'Authentication', 
-				'menu_title' => 'API Authentication', 
+				'menu_title' => 'Siigo API Authentication', 
 				'capability' => 'manage_options', 
-				'menu_slug' => 'envioclick_authentication', 
+				'menu_slug' => 'woocommerce_siigo_api_authentication', 
 				'callback' => array( $this->callbacks, 'admin_authentication' )
 			)
 		);
@@ -70,55 +70,55 @@ class Admin extends BaseController
 	{
 		$args = array(
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_authentication',
+				'option_name' => 'api_key',
+				'callback' => array( $this->callbacks, 'text_field_sanitize' )
+			),
+			/*array(
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'quote_selection_preference',
 				'callback' => array( $this->callbacks, 'select_sanitize' )
 			),
 			array(
-				'option_group' => 'envioclick_plugin_authentication',
-				'option_name' => 'api_key',
-				'callback' => array( $this->callbacks, 'text_field_sanitize' )
-			),
-			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_name',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_first_name',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_last_name',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_email',
 				'callback' => array( $this->callbacks, 'email_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_phone',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_street',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_crossstring',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
 			),
 			array(
-				'option_group' => 'envioclick_plugin_settings',
+				'option_group' => 'woocommerce_siigo_api_plugin_settings',
 				'option_name' => 'company_suburb',
 				'callback' => array( $this->callbacks, 'text_field_sanitize' )	
-			)
+			)*/
 		);
 
 		$this->settings->set_settings( $args );
@@ -127,23 +127,23 @@ class Admin extends BaseController
 	public function set_sections()
 	{
 		$args = array(
-			array(
-				'id' => 'envioclick_admin_company_info',
+			/*array(
+				'id' => 'woocommerce_siigo_api_admin_company_info',
 				'title' => __('Dirección de Origen', 'envioclick'),
-				'callback' => array( $this->callbacks, 'envioclick_company_info_section'),
-				'page' => 'envioclick_plugin'
-			),
+				'callback' => array( $this->callbacks, 'woocommerce_siigo_api_company_info_section'),
+				'page' => 'woocommerce_siigo_api_plugin'
+			),*/
 			array(
-				'id' => 'envioclick_admin_index',
+				'id' => 'woocommerce_siigo_api_admin_index',
 				'title' => __('Settings'),
-				'callback' => array( $this->callbacks, 'envioclick_admin_section'),
-				'page' => 'envioclick_plugin'
+				'callback' => array( $this->callbacks, 'woocommerce_siigo_api_admin_section'),
+				'page' => 'woocommerce_siigo_api_plugin'
 			),
 			array(
-				'id' => 'envioclick_authentication_index',
+				'id' => 'woocommerce_siigo_api_authentication_index',
 				'title' => __('API Key Authentication'),
-				'callback' => array( $this->callbacks, 'envioclick_authentication_section'),
-				'page' => 'envioclick_authentication'
+				'callback' => array( $this->callbacks, 'woocommerce_siigo_api_authentication_section'),
+				'page' => 'woocommerce_siigo_api_authentication'
 			),
 			
 		);
@@ -154,7 +154,7 @@ class Admin extends BaseController
 	public function set_fields()
 	{
 		$args = array(
-			array(
+			/*array(
 				'id' => 'shipping_quote_selection_preference',
 				'title' => __('¿Cómo se van a cotizar sus órdenes?', 'envioclick'),
 				'callback' => array( $this->callbacks, 'envioclick_quotation_preference_select'),
@@ -164,20 +164,20 @@ class Admin extends BaseController
 					'label_for' => 'shipping_quote_selection_preference',
 					'class' => 'quotation_preferences'
 				)
-			),
+			),*/
 			array(
-				'id' => 'envioclick_api_key',
+				'id' => 'siigo_api_key',
 				'title' => 'API Key',
-				'callback' => array( $this->callbacks, 'envioclick_textfield'),
-				'page' => 'envioclick_authentication',
-				'section' => 'envioclick_authentication_index',
+				'callback' => array( $this->callbacks, 'woocommerce_siigo_api_textfield'),
+				'page' => 'woocommerce_siigo_api_authentication',
+				'section' => 'woocommerce_siigo_api_authentication_index',
 				'args' => array(
-					'label_for' => 'envioclick_api_key',
-					'class' => 'envioclick_api_key'
-					'placeholder' => __('Pega la API key de envioclick aquí', 'envioclick')
+					'label_for' => 'siigo_api_key',
+					'class' => 'siigo_api_key'
+					'placeholder' => __('Pega la API key de Siigo aquí', 'woocommerce_siigo_api')
 				)
-			),
-			array(
+			)
+			/*array(
 				'id' => 'company_name',
 				'title' => __('Nombre de la empresa', 'envioclick'),
 				'callback' => array( $this->callbacks, 'envioclick_textfield'),
@@ -284,7 +284,7 @@ class Admin extends BaseController
 					'class' => 'company_suburb'
 					'placeholder' => __('Barrio/Localidad', 'envioclick')
 				)
-			)
+			)*/
 		);
 
 		$this->settings->set_fields( $args );

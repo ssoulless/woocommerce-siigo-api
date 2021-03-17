@@ -1,6 +1,6 @@
 {
-    "name": "sebastianvelandiagiraldo/woocommerce-envioclick",
-    "description": "envioclick plugin, integration with woocommerce",
+    "name": "sebastianvelandiagiraldo/woocommerce-siigo-api",
+    "description": "Siigo integration for woocommerce",
     "type": "project",
     "license": "GPL",
     "authors": [

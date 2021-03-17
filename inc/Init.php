@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoAPI
  */
 namespace Inc;
 

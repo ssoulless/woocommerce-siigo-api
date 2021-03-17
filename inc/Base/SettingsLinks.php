@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoApi
  */
 namespace Inc\Base;
 
@@ -16,7 +16,7 @@ class SettingsLinks extends BaseController
 
 	public function settings_link( $links ) 
 	{
-		$settings_link = '<a href="admin.php?page=envioclick_plugin">Settings</a>';
+		$settings_link = '<a href="admin.php?page=woocommerce_siigo_api_plugin">Settings</a>';
 		array_push($links, $settings_link);
 		return $links;
 	}
