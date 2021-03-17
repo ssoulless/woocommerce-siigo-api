@@ -1,0 +1,17 @@
+{
+    "name": "sebastianvelandiagiraldo/woocommerce-envioclick",
+    "description": "envioclick plugin, integration with woocommerce",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Sebastian Velandia",
+            "email": "sebas.velandia27@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
