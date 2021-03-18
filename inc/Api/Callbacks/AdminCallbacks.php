@@ -1,6 +1,6 @@
 <?php
 /**
- * @package EnvioclickPlugin
+ * @package WoocommerceSiigoApi
  */
 namespace Inc\Api\Callbacks;
 
@@ -29,7 +29,7 @@ class AdminCallbacks extends BaseController
 		);
 
 		if( ! in_array( $value, $valid_values ) ) {
-			add_settings_error('quote_selection_preference', 'available_options_only', __('Only select options are available', 'envioclick'), 'error');
+			add_settings_error('quote_selection_preference', 'available_options_only', __('Only select options are available', 'woocommerce_siigo_api'), 'error');
 			return get_option( 'quote_selection_preference' );
 		}
 
@@ -50,31 +50,22 @@ class AdminCallbacks extends BaseController
 		return $value;
 	}
 
-	public function envioclick_admin_section()
+	/*public function woocommerce_siigo_api_admin_section()
 	{
-		echo __('Selecciona cómo quieres que se seleccione la cotización para el envío de tus pedidos', 'envioclick');
+		echo __('Selecciona cómo quieres que se seleccione la cotización para el envío de tus pedidos', 'woocommerce_siigo_api');
+	}*/
+
+	public function woocommerce_siigo_api_authentication_section()
+	{
+		echo __('Ingresa los datos de autenticación API de Siigo', 'woocommerce_siigo_api');
 	}
 
-	public function envioclick_authentication_section()
-	{
-		echo __('Ingresa tu API key generada desde tu cuenta de envioclick', 'envioclick');
-	}
-
-	public function envioclick_company_info_section()
+	/*public function woocommerce_siigo_api_company_info_section()
 	{
 		echo __('Especifica la dirección de tu empresa, desde donde se van a recoger los envíos por parte de envioclick', 'envioclick');
-	}
+	}*/
 
-	public function envioclick_quotation_preference_select()
-	{
-		$value = esc_attr( get_option( 'quote_selection_preference' ) );
-		echo '<select type="text" class="regular-text" name="quote_selection_preference">
-				<option value="cheapest" ' . ($value == 'cheapest' ? 'selected' : '') .'>' . __('Por menor precio', 'envioclick') . '</option>
-				<option value="fastest" '. ($value == 'fastest' ? 'selected' : '') .'>' . __('Por menor tiempo de entrega', 'envioclick') . '</option>
-			</select>';
-	}
-
-	public function envioclick_textfield( array $args)
+	public function woocommerce_siigo_api_textfield( array $args)
 	{
 		$field_name = $args['label_for'];
 		$placeholder = $args['placeholder'];
